@@ -171,7 +171,7 @@ public class GPSUtils {
 		// TODO - START
 		
 		str = String.format(Locale.US, "%.2f", d);
-		str = String.format("%10s", str);
+		str = String.format("%"+TEXTWIDTH+"s", str);
 		
 		return str;
 

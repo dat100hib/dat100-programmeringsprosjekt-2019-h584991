@@ -10,14 +10,12 @@ public class GPSData {
 
 	public GPSData(int antall) {
 
-		// TODO - START
-		
+		// Oppretter en ny liste GPSpunkter med gitt antall.
 		this.gpspoints = new GPSPoint[antall];
+		
+		// Setter antall som 0 for at første punkt settes inn på første plassen
 		this.antall = 0;
 		
-		//throw new UnsupportedOperationException(TODO.construtor("GPSData"));
-
-		// TODO - SLUTT
 	}
 
 	public GPSPoint[] getGPSPoints() {
@@ -28,8 +26,9 @@ public class GPSData {
 
 		boolean inserted = false;
 
-		// TODO - START
-		
+		// sjekker om det er plass til å sette inn et punkt til.
+		// dersom det er plass, settes punktet inn og true returneres.
+		// dersom det ikke er plass returneres false uten at noe settes inn.
 		if (antall < gpspoints.length) {
 			gpspoints[antall] = gpspoint;
 			antall++;
@@ -37,42 +36,31 @@ public class GPSData {
 		}
 		return inserted;
 		
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
 	}
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
 		GPSPoint gpspoint;
-
-		// TODO - START
 		
+		// Bruker GPSDataConverter fra forrige oppgave til å konvertere dataen til ett nytt gpspoint
 		gpspoint = GPSDataConverter.convert(time, latitude, longitude, elevation);
 		
+		// bruker insertGPS til å sette det nye punktet inn i listen
 		boolean inserted = insertGPS(gpspoint);
 		
+		// returnerer true om punktet ble satt inn og false om det ikke ble satt inn
 		return inserted;
-		
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
 		
 	}
 
 	public void print() {
 
 		System.out.println("====== Konvertert GPS Data - START ======");
-
-		// TODO - START
 		
+		// Går gjennom listen med punkt og printer dem ved hjelp av toString fra foorige oppgave.
 		for (GPSPoint g : gpspoints) {
 			System.out.print(g.toString());
 		}
-
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - SLUTT
 		
 		System.out.println("====== Konvertert GPS Data - SLUTT ======");
 

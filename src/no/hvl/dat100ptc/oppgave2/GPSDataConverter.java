@@ -19,24 +19,17 @@ public class GPSDataConverter {
 		int secs;
 		int hr, min, sec;
 		
-		// TODO
-		// OPPGAVE - START
 		
+		// Henter ut timer, minutter og sekunder enkeltvis og konverterer fra streng til int.
 		hr = parseInt(timestr.substring(11, 13));
 		min = parseInt(timestr.substring(14, 16));
 		sec = parseInt(timestr.substring(17, 19));
 		
-		
-		
+		// Slår sammen timer og minutter til sekunder
 		secs = hr*3600 + min*60 + sec;
 		
+		//returnerer totalt antall sekunder
 		return secs;
-		
-		
-		
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// OPPGAVE - SLUTT
 		
 	}
 
@@ -44,22 +37,17 @@ public class GPSDataConverter {
 
 		GPSPoint gpspoint;
 
-		// TODO - START ;
-		
-		
+		// Konverterer strengene til int og doubles.
 		int time = toSeconds(timeStr);
 		double latitude = parseDouble(latitudeStr);
 		double longitude = parseDouble(longitudeStr);
 		double elevation = parseDouble(elevationStr);
 		
+		// Konstruerer et nytt gpspoint med de konverterte verdiene
 		gpspoint = new GPSPoint(time, latitude, longitude, elevation);
 		
+		// returnerer det nye GPSPointet.
 		return gpspoint;
-		
-		
-		//throw new UnsupportedOperationException(TODO.method());
-
-		// OPPGAVE - SLUTT ;
 	    
 	}
 	

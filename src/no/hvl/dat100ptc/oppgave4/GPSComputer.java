@@ -253,5 +253,5 @@ public class GPSComputer {
 		// TODO - SLUTT
 		
 	}
-
+	
 }
